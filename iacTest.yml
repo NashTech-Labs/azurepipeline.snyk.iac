@@ -1,0 +1,31 @@
+parameters:
+- name: snykToken
+  type: string
+  displayName: "Authentication Snyk Token"
+
+- name: moduleLocation
+  type: string
+  displayName: "Directory with terraform modules"
+  default: "./module"
+
+steps:
+- task: Bash@3
+  displayName: 'Install Snyk'
+  inputs:
+    targetType: 'inline'
+    script: |
+      npm install -g snyk
+
+- task: Bash@3
+  displayName: 'Authenticate Snyk'
+  inputs:
+    targetType: 'inline'
+    script: |
+      snyk auth '${{ parameters.snykToken }}'
+
+- task: Bash@3
+  displayName: 'Snyk Test on Terraform modules'
+  inputs:
+    targetType: 'inline'
+    script: |
+      snyk iac test ${{ parameters.moduleLocation }}
