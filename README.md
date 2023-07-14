@@ -1,6 +1,8 @@
 # ADO.Pipelines.Templates.frameWork.common.snyk
 
-    This template uses azure pipeline to test iac based code like terraform.
+This template uses azure pipeline to test iac based code like terraform.
+
+* **NOTE:** As per today of July 13 2023, the snyk task available at marketplace azure, does not support iac testing so directly used script
 
 ## Pipeline Requirements
 
