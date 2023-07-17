@@ -1,4 +1,4 @@
-# ADO.Pipelines.Templates.frameWork.common.snyk
+# ADO Pipeline Template for Snyk IAC Test
 
 This template uses azure pipeline to test iac based code like terraform.
 
